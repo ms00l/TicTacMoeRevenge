@@ -4,6 +4,7 @@ const moeUi = require('./ui.js')
 const moeApi = require('./api.js')
 const getFormFields = require('../lib/get-form-fields')
 const store = require('./store.js')
+const addNestedValue = require('../lib/add-nested-value.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -30,16 +31,48 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
-  event.preventDefault()
   console.log('sign out ran')
 
   moeApi
     .signOut()
-    .then(moeUi.signOutSuccess)
-    .catch(moeUi.signOutFailure)
+    .then((response) => moeUi.signOutSuccess(response))
+    .catch(() => moeUi.signOutFailure)
 }
+// const newGame = function (event)
+
+// const onNewGame = function (event)
+//     event.newGame
+const onNewGame = function () {
+  moeApi
+    .newGame()
+    .then(() => moeUi.newGameSuccess)
+    .then((response) => {
+      store.game = response.game.cells
+    })
+    .then(() => console.log(store))
+
+  // .then((response) => store.response)
+
+//   moeApi
+//     .newGame
+//     .then(() => moeUi.newGameSuccess)
+//     .catch(() => moeUi.newGameFailure)
+}
+
+let userX = true
+const onBoxClick = function () {
+  if (userX) {
+    $(this).text('x')
+  } else { $(this).text('o') }
+  userX = !userX
+}
+// const something = function () {
+
+// }
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  onNewGame,
+  onBoxClick
 }

@@ -27,8 +27,62 @@ const signOut = function () {
   })
 }
 
+// const index0 = function () {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/:id',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     }
+//     data.cell
+//     data.value
+//   })
+// }
+
+// const newGame = function () {
+//     return $.ajax({
+//         method: 'POST'
+//         url: ''
+//     })
+// }
+const newGame = function () {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {}
+  })
+}
+
+// const indexGames = function () {
+//   return $.ajax({
+//     method: 'GET',
+//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     },
+//     data
+//   })
+// }
+
+// const showGame = function (data) {
+//   console.log(data)
+//   return $.ajax({
+//     method: 'GET',
+//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newGame
+//   indexGames,
+//   showGame
 }
