@@ -27,15 +27,22 @@ const signOut = function () {
   })
 }
 
-// const index0 = function () {
+// const index0 = function (data) {
 //   return $.ajax({
 //     method: 'PATCH',
 //     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/:id',
 //     headers: {
 //       Authorization: 'Bearer ' + store.user.token
+//     },
+//     data: {
+//       game: {
+//         cell: {
+//           index: store.game.cell.index,
+//           value: store.game.cell.value
+//         },
+//         over: false
+//       }
 //     }
-//     data.cell
-//     data.value
 //   })
 // }
 
@@ -45,7 +52,8 @@ const signOut = function () {
 //         url: ''
 //     })
 // }
-const newGame = function () {
+const newGame = function (data) {
+  console.log(data)
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
@@ -56,9 +64,57 @@ const newGame = function () {
   })
 }
 
-// const indexGames = function () {
+const logCellIndex = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 0,
+          value: 'x'
+        },
+        over: false
+      }
+    }
+  })
+}
+const updateGame = function (cellIndex, userX, gameOver) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: userX
+        },
+        over: gameOver
+      }
+    }
+  })
+}
+
+const startGame = function (data) {
+  console.log(data)
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {}
+  })
+}
+// const updateGame = function () {
 //   return $.ajax({
-//     method: 'GET',
+//     method: 'PATCH',
 //     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
 //     headers: {
 //       Authorization: 'Bearer ' + store.user.token
@@ -82,7 +138,11 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  newGame
+  newGame,
+  logCellIndex,
+  updateGame,
+  startGame
+  // index0
 //   indexGames,
 //   showGame
 }

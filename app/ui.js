@@ -16,6 +16,7 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
   $('#sign-up-form, #sign-in-form').hide()
   $('#signout, #new, #game').show()
+  // $('#game').on('click', moeApi.newGame)
   console.log(response)
 
   store.user = response.user
@@ -42,50 +43,26 @@ const signOutFailure = function (error) {
   console.error('signOutFailure ran. Error is :', error)
 }
 
-const newGameSuccess = function () {
-  $('#game').off('click')
+const onSuccessUpdate = function (response) {
+  console.log(response)
+  store.game = response.game
+  // store.user = response.user
+}
+const clearBoard = function () {
+  // set value to new nulls
+  $('.box').text('(づ ◕‿◕ )づ')
+}
+const onStartGameSuccess = function (response) {
+  // storing user and game to use when update game. For token and game ID
+  console.log(response)
+  store.game = response.game
+  clearBoard()
+  // store.user = response.user
 }
 
-// const onIndexGamesSuccess = function (response) {
-//   let gamesHtml = ''
-
-//   response.game.forEach((game) => {
-//     gamesHtml += `
-//                       <div>
-//                         <h4>${games.title}</h4>
-//                         <p>${book.author}</p>
-//                         <p>Review: 5 Stars</p>
-//                         <form class="update-book-list" type="submit"data-id=${book._id}>
-//                         <input name="book[title]" type="text" placeholder="whats it called">
-//                         <input name="book[author]" type="text" placeholder="who wrote it">
-//                         <button type="submit">reset that book oooooo</button>
-//                         </form>
-//                         <button class="delete-book-button" type="submit"data-id=${book._id}>nah i dont like it</button>
-//                       </div>
-//                     `
-//   })
-
-//   $('#show-books').html(gamesHtml)
-// }
-
-// const onIndexBooksFailure = function () {
-//   $('#error-message').text('There was an error')
-// }
-
-// const onShowBookSuccess = function (response) {
-//   const bookHtml = `
-//                       <div>
-//                         <h4>${response.book.title}</h4>
-//                         <p>${response.book.author}</p>
-//                         <p>Review: 10 Stars</p>
-//                       </div>
-//                     `
-//   $('#show-books').html(bookHtml)
-// }
-
-// const onShowBookFailure = function () {
-//   $('#error-message').text('Failure while trying to show book')
-// }
+const newGameSuccess = function () {
+  // $('#game').off('click')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -94,5 +71,8 @@ module.exports = {
   onSignInFailure,
   signOutSuccess,
   signOutFailure,
+  onSuccessUpdate,
+  onStartGameSuccess,
   newGameSuccess
+//   newGameSuccess
 }
