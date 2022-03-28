@@ -64,24 +64,24 @@ const newGame = function (data) {
   })
 }
 
-const logCellIndex = function (data) {
-  return $.ajax({
-    method: 'PATCH',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
+// const logCellIndex = function (data) {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     },
+//     data: {
+//       game: {
+//         cell: {
+//           index: 0,
+//           value: 'x'
+//         },
+//         over: false
+//       }
+//     }
+//   })
+// }
 const updateGame = function (cellIndex, userX, gameOver) {
   return $.ajax({
     method: 'PATCH',
@@ -139,7 +139,7 @@ module.exports = {
   signIn,
   signOut,
   newGame,
-  logCellIndex,
+  // logCellIndex,
   updateGame,
   startGame
   // index0

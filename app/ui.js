@@ -52,13 +52,14 @@ const onSuccessUpdate = function (response) {
 const clearBoard = function () {
   // set value to new nulls
   $('.box').text('(づ ◕‿◕ )づ')
+  const board = [null, null, null, null, null, null, null, null, null]
 }
 const onStartGameSuccess = function (response) {
   // storing user and game to use when update game. For token and game ID
   console.log(response)
   store.game = response.game
   clearBoard()
-  $('.box').on('click', moeEvents.onBoxClick())
+  // $('.box').on('click', moeEvents.onBoxClick())
 
   // store.user = response.user
 }

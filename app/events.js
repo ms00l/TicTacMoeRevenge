@@ -64,7 +64,6 @@ const onNewGame = function () {
 const onStartGame = function () {
   moeApi.startGame()
     .then((response) => moeUi.onStartGameSuccess(response))
-    .catch(() => moeApi.onStartGameFailure())
 }
 const onUpdateGame = function () {
   moeApi.updateGame()
@@ -157,7 +156,6 @@ const onBoxClick = function () {
     $('.box').off('click')
   }
   moeApi.updateGame(cellIndex, board[cellIndex], gameOver)
-    .then(() => moeApi.startGame())
 }
 
 module.exports = {
