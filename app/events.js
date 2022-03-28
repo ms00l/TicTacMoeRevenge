@@ -62,7 +62,6 @@ const onNewGame = function () {
 // let gameOver =
 
 const onStartGame = function () {
-  $('#game').off('click')
   moeApi.startGame()
     .then((response) => moeUi.onStartGameSuccess(response))
     .catch(() => moeApi.onStartGameFailure())
@@ -95,49 +94,70 @@ const onBoxClick = function () {
     $(this).text('o')
     board[cellIndex] = 'o'
   }
-  console.log(board)
   userX = !userX
+  console.log(board)
   if (board[0] === board[1] && board[1] === board[2] && board[1] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[3] === board[4] && board[4] === board[5] && board[4] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[6] === board[7] && board[7] === board[8] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[6] === board[7] && board[7] === board[8] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[0] === board[3] && board[3] === board[6] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[1] === board[4] && board[4] === board[7] && board[1] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[2] === board[5] && board[5] === board[8] && board[2] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[0] === board[4] && board[4] === board[8] && board[0] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[2] === board[4] && board[4] === board[6] && board[6] !== null) {
     $('#Winner').text(board[cellIndex] + ' Is the Winner')
-    return (store.data.game.over = true)
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   if (board[1] !== null && board[2] !== null && board[3] !== null && board[4] !== null && board[5] !== null & board[6] !== null && board[7] !== null && board[8] !== null) {
     $('#Winner').text("It's a tie!")
-    store.data.game.over = true
+    gameOver = !gameOver
+    console.log(gameOver)
+    $('.box').off('click')
   }
   moeApi.updateGame(cellIndex, board[cellIndex], gameOver)
+    .then(() => moeApi.startGame())
 }
 
 module.exports = {

@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store.js')
+const moeEvents = require('./events.js')
 
 const onSignUpSuccess = function () {
   $('#auth-display').html('<p>lol hey hey</p>')
@@ -57,6 +58,8 @@ const onStartGameSuccess = function (response) {
   console.log(response)
   store.game = response.game
   clearBoard()
+  $('.box').on('click', moeEvents.onBoxClick())
+
   // store.user = response.user
 }
 
