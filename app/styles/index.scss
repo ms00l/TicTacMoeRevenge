@@ -1,10 +1,81 @@
 @import '~bootstrap/scss/bootstrap';
+@import url("hover-min.css");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+$dojacat: rgb(238, 69, 162);
 
-.game {
-    background-color: pink;
+body {
+  background-color: rgb(0, 0, 0) ;
 }
 
-// .box {
-//     content: url(User/users/moesuleiman/Pictures/5PqbRXD.png);
-// }
+.alltheforms {
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}
+
+
+.hvr-grow-rotate {
+  display:inline-block;
+  vertical-align:middle;
+  -webkit-transform:perspective(1px) translateZ(0);
+  transform:perspective(1px) translateZ(0);
+  box-shadow:0 0 1px rgba(0,0,0,0);
+  -webkit-transition-duration:.3s;
+  transition-duration:.3s;
+  -webkit-transition-property:transform;
+  transition-property:transform
+}
+.hvr-buzz {
+  display:inline-block;
+  vertical-align:middle;
+  -webkit-transform:perspective(1px) translateZ(0);
+  transform:perspective(1px) translateZ(0);
+  box-shadow:0 0 1px rgba(0,0,0,0)
+}
+
+.box {
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  text-shadow: -1px -1px rgb(253, 0, 241), 1px 1px rgb(121, 4, 91), -3px 0 4px #000;
+}
+
+h1, h2, h4 {
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  text-shadow: -5px -5px rgb(211, 0, 253), 1px 1px rgb(121, 4, 91), -3px 0 4px rgb(0, 0, 0);
+  text-align: center;
+  font-size: 50px;
+}
+
+.alt-color {
+  background-color: $dojacat;
+}
+img.moe1, img.moe2{
+    size: 200px
+}
+.winner, .winner2, h6, #auth-display {
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.box:hover {
+  text-shadow: -1px -1px rgb(255, 255, 255), 1px 1px rgb(255, 255, 255), -3px 0 4px #000;
+}
+
+.row > div {
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}

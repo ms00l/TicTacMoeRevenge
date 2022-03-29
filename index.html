@@ -7,6 +7,7 @@
 
 
       <!-- Do not add `link` tags-->
+      <link href="app/styles/hover-min.css" rel="stylesheet">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
@@ -16,42 +17,43 @@
   <body>
       <h1>TIC TAC MOE</h1>
       <h4>Battle of the Brains</h4>
-      <div class="alltheforms"><button></button>
+      <div class="alltheforms"><!-- <button></button> -->
         <section id="auth-display"></section>
         <form id="sign-up-form">
           <input name="credentials[email]" type="email" placeholder="Email">
           <input name="credentials[password]" type="password" placeholder="password">
           <input name="credentials[password_confirmation]" type="password" placeholder="re-type password">
-          <button type="submit">Sign Up</button>
+          <button class="hvr-buzz" type="submit">Sign Up</button>
         </form>
         <form id="sign-in-form">
           <input name="credentials[email]" type="email" placeholder="Email">
           <input name="credentials[password]" type="password" placeholder="Password">
-          <button type="submit">Sign In</button>
+          <button class="hvr-buzz" type="submit">Sign In</button>
         </form>
         <section id="signout"><h6>Sign Out</h6>
-        <button id="leave" class="sign-out">(ಡ‸ಡ)</button></section>
+        <button id="leave" class="sign-out hvr-buzz">(ಡ‸ಡ)</button></section>
         <p id="message"></p>
       </div>
       <div class="container">
-        <button id="new" type="submit">NEW GAME</button>
+        <button id="new" type="submit" class="hvr-buzz">NEW GAME</button>
         <h2>─=≡Σ((( つ＞＜)つ</h2>
       </div>
       <section id="game" class="game">
         <div class="container">
           <div class="row">
-            <div data-cell-index="0" id="0" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="1" id="1" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="2" id="2" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="3" id="3" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="4" id="4" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="5" id="5" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="6" id="6" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="7" id="7" class="col-4 box">(づ ◕‿◕ )づ</div>
-            <div data-cell-index="8" id="8" class="col-4 box">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="0" id="0" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="1" id="1" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="2" id="2" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="3" id="3" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="4" id="4" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="5" id="5" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="6" id="6" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="7" id="7" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
+            <div data-cell-index="8" id="8" class="col-4 box hvr-grow-rotate hvr-buzz">(づ ◕‿◕ )づ</div>
           </div>
         </div>
       </section>
-      <section id="Winner"></section>
+      <section id="Winner2" class="winner2"></section>
+      <section id="Winner" class="winner"></section>
   </body>
 </html>

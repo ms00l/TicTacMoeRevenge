@@ -9,6 +9,6 @@ $(() => {
   $('#leave').on('click', moeEvents.onSignOut)
   $('#signout, #new').hide()
   $('#new').on('click', moeEvents.onStartGame)
-  // $('.cell').on('click', function () { console.log(this.getAttribute('data-cell-index')) })
   $('.box').on('click', moeEvents.onBoxClick)
+  $('#Winner2').hide()
 })
