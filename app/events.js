@@ -99,6 +99,7 @@ const onBoxClick = function () {
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    // moeUi.winState()
   }
   if (store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5] && store.game.cells[4] !== '') {
     $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')

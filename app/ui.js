@@ -30,11 +30,11 @@ const onSignInFailure = function () {
 const signOutSuccess = function () {
   $('#signout, #game, #new').hide()
   $('#message').text('Signed out successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  // $('#message').removeClass()
+  // $('#message').addClass('success')
   $('form').trigger('reset')
   $('#sign-in-form, #sign-up-form').show()
-  console.log('signOutSuccess ran and nothing was returned!')
+  $('#message').delay(3200).fadeOut(100)
   store.user = null
 }
 
