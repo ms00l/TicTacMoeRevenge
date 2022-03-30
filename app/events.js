@@ -4,7 +4,6 @@ const moeUi = require('./ui.js')
 const moeApi = require('./api.js')
 const getFormFields = require('../lib/get-form-fields')
 const store = require('./store.js')
-// const addNestedValue = require('../lib/add-nested-value.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -22,15 +21,11 @@ const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log('ON SIGN IN DATA*********', data)
-  // store.response = store.user.token
 
   moeApi
     .signIn(data)
     .then((response) => moeUi.onSignInSuccess(response))
-    // .then(onStartGame())
     .catch(() => moeUi.onSignInFailure())
-  // moeApi.startGame().then((response) => moeUi.onStartGameSuccess(response))
 }
 
 const onSignOut = function (event) {
@@ -66,10 +61,6 @@ const onUpdateGame = function () {
     .then((response) => moeUi.onSuccessUpdate(response))
 }
 
-// const clearStore.game.cells = function () {
-//   store.game.cells.forEach(cellIndex => (cellIndex =   ))
-//   return store.game.cells
-// }
 let gameOver = false
 let userX = true
 const onBoxClick = function () {

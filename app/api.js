@@ -27,31 +27,6 @@ const signOut = function () {
   })
 }
 
-// const index0 = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/:id',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: {
-//       game: {
-//         cell: {
-//           index: store.game.cell.index,
-//           value: store.game.cell.value
-//         },
-//         over: false
-//       }
-//     }
-//   })
-// }
-
-// const newGame = function () {
-//     return $.ajax({
-//         method: 'POST'
-//         url: ''
-//     })
-// }
 const newGame = function (data) {
   console.log(data)
   return $.ajax({
@@ -64,24 +39,6 @@ const newGame = function (data) {
   })
 }
 
-// const logCellIndex = function (data) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + store.game._id,
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: {
-//       game: {
-//         cell: {
-//           index: 0,
-//           value: 'x'
-//         },
-//         over: false
-//       }
-//     }
-//   })
-// }
 const updateGame = function (cellIndex, userX, gameOver) {
   return $.ajax({
     method: 'PATCH',
@@ -112,37 +69,12 @@ const startGame = function (data) {
     data: {}
   })
 }
-// const updateGame = function () {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data
-//   })
-// }
-
-// const showGame = function (data) {
-//   console.log(data)
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     }
-//   })
-// }
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   newGame,
-  // logCellIndex,
   updateGame,
   startGame
-  // index0
-//   indexGames,
-//   showGame
 }

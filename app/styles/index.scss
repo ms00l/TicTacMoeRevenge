@@ -39,9 +39,9 @@ button[type=submit], .sign-out {
 }
 
 .alltheforms {
-    align-items: flex-start;
+    align-items: flex-end;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     text-align: center;
 }
