@@ -1,7 +1,8 @@
 Tic Tac MOE !!!
+https://ms00l.github.io/TicTacMoeRevenge/
 What is it: a game of tic tac toe but because im weirdly narcissistic it has my face all over it making it IGN's Game of the Century ("better than skyrim AND tony hawks pro skater 2")
 
-wire frame: ('./tictac@2x.png)
+wire frame: ![wire frame](tictac@2x.png)
 
 The user is:
 able to sign up
