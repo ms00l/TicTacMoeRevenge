@@ -52,22 +52,28 @@ const onSuccessUpdate = function (response) {
 }
 const winState = function (response) {
   store.game = response.game
-  $('#Winner2').html('OH YEAH BAYBAY ' + store.userX + ' WINS!!!!')
+  // $('.box').off('click')
+  // $('.milkies').show()
+  // if (gameOver === true) {
+  //   ($('.milkies').text('HOLY MOELY ' + store.userX + ' YOU WON'))
+  // }
+  // $('#Winner').show('OH YEAH BAYBAY ' + store.userX + ' WINS!!!!')
 }
 const clearBoard = function (store, userX) {
   // set value to new nulls
   $('.box').text('(づ ◕‿◕ )づ')
-  $('#Winner').text('Try to win I literally dare you, you will not win and honestly chieftain you just need to accept this...')
-  $('#Winner').delay(3200).fadeOut(100)
-  winState()
+  $('.milkies').text('(☞°ヮ°)☞ ☜(°ヮ°☜)')
+  // $('#Winner').text('Try to win I literally dare you, you will not win and honestly chieftain you just need to accept this...')
+  // $('#Winner').delay(3200).fadeOut(100)
+  // winState()
 }
 const onStartGameSuccess = function (response) {
   // storing user and game to use when update game. For token and game ID
   console.log(response)
   store.game = response.game
-  $('Winner2').hide()
+  // $('Winner2').hide()
   clearBoard()
-  $('Winner2').hide()
+  // $('Winner2').hide()
   // $('.box').on('click', moeEvents.onBoxClick())
 
   // store.user = response.user
@@ -86,6 +92,7 @@ module.exports = {
   signOutFailure,
   onSuccessUpdate,
   onStartGameSuccess,
-  newGameSuccess
+  newGameSuccess,
+  winState
 //   newGameSuccess
 }

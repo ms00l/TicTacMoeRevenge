@@ -99,14 +99,21 @@ div.box > img.moe1, img.moe2 {
     height: 100px;
     object-fit: contain;
 }
-.winner, .winner2, h6, #auth-display {
+h6, #auth-display {
     color: white;
     align-items: center;
     display: flex;
     justify-content: center;
     text-align: center;
 }
-
+.winner, .winner2{
+  color: black;
+  size: 300px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .box:hover {
   text-shadow: -1px -1px rgb(255, 255, 255), 1px 1px rgb(255, 255, 255), -3px 0 4px #000;
 }

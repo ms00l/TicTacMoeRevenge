@@ -86,59 +86,58 @@ const onBoxClick = function () {
   console.log(store.game.cells)
 
   if (store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2] && store.game.cells[1] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
-    // moeUi.winState()
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5] && store.game.cells[4] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8] && store.game.cells[6] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8] && store.game.cells[6] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6] && store.game.cells[6] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7] && store.game.cells[1] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8] && store.game.cells[2] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8] && store.game.cells[0] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   }
   if (store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6] && store.game.cells[6] !== '') {
-    $('#Winner').text(store.game.cells[cellIndex] + ' Is the Winner')
     gameOver = !gameOver
     console.log(gameOver)
     $('.box').off('click')
+    $('.milkies').text('HOLY MOELY ' + store.game.cells[cellIndex] + ' YOU WON')
   } // this next tie is broken X diagonal from top left down counts as a tie?
   if (store.game.cells[1] !== '' && store.game.cells[2] !== '' && store.game.cells[3] !== '' && store.game.cells[4] !== '' && store.game.cells[5] !== '' & store.game.cells[6] !== '' && store.game.cells[7] !== '' && store.game.cells[8] !== '') {
     $('#Winner').text("It's a tie!")
@@ -147,6 +146,7 @@ const onBoxClick = function () {
     $('.box').off('click')
   }
   moeApi.updateGame(cellIndex, store.game.cells[cellIndex], gameOver)
+  // .then((response) => moeUi.winState(response))
 }
 const onStartGame = function () {
   console.log('#######################', store.user)
